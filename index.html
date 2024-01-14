@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Play Looping Video</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        video {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            pointer-events: none; /* Disable interactions with the video */
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted playsinline>
+        <!-- Provide the path to your video file -->
+        <source src="fresher.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>
