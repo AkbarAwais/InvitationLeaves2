@@ -3,21 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto-Play Looping GIF</title>
+    <title>Loading Looping GIF</title>
     <style>
         body {
             margin: 0;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
         }
         img {
             width: 100%;
-            height: 100vh;
-            object-fit: cover;
+            max-height: 80vh; /* Limit the height to 80% of the viewport */
+            object-fit: contain; /* Maintain the aspect ratio */
             pointer-events: none; /* Disable interactions with the image */
+        }
+        #loading-text {
+            position: absolute;
+            font-size: 1.5em;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <img src="freshergif.gif" alt="Animated GIF">
+    <div id="loading-text">Invitation Loading...</div>
+    <img src="Final_edited_leaves.gif" alt="Animated GIF" loading="lazy" id="gif-image">
+
+    <script>
+        // Check if the image is loaded successfully
+        var gifImage = document.getElementById('gif-image');
+        gifImage.onload = function() {
+            // Hide the loading text when the image is loaded
+            var loadingText = document.getElementById('loading-text');
+            loadingText.style.display = 'none';
+        };
+    </script>
 </body>
 </html>
